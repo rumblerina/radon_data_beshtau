@@ -9,8 +9,9 @@ from tensorflow.keras import layers
 from tensorflow.keras.layers.experimental import preprocessing
 
 #dataset
+#weather data obtained from the open weather archive rp5.ru
 column_names = ['datetime', 'ur/h', 'usv/h', 't', 'p0', 'humid', 'windspd', 'Td', 'rrr', 'mmprecip24', 'mmprecip48']
-raw_dataset = pd.read_csv("D:\\Users\\User\\Desktop\\radon stuff\\beshtaugamma.csv", names = column_names, na_values='?', sep =',', skiprows = 1)
+raw_dataset = pd.read_csv("beshtaugamma.csv", names = column_names, na_values='?', sep =',', skiprows = 1)
 dataset = raw_dataset.copy()
 dataset = dataset.drop('datetime', 1)
 dataset = dataset.drop('ur/h', 1)
